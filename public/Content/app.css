@@ -14,3 +14,13 @@
 .navbar-text{
     font-size: medium;
 }
+#me{
+    float: right;
+    margin-left: 25px;
+    margin-top: -60px;
+}
+#logo{
+    margin-left: 10px;
+    margin-top: -25px;
+    margin-bottom: -25px;
+}
