@@ -24,3 +24,18 @@
     margin-top: -25px;
     margin-bottom: -25px;
 }
+#welcome{
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+}
+#bg{
+    background-image:url(/Assets/images/fullnight2.jpg);
+    max-height: 100%;
+    background-repeat: no-repeat;
+}
+#welcome2{
+    color: white;
+    font-size: larger;
+    margin-right: 140px;
+}
