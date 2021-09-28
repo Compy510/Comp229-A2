@@ -1,0 +1,16 @@
+/*custom css goes here */
+.nav-link{
+  color: rgb(212, 243, 161) !important;
+}
+.active{
+    background-color: rgb(20, 141, 172);
+}
+.nav-link:hover{
+    color: rgb(255, 255, 255) !important;
+}
+.navbar-expand-lg{
+    background-color:rgb(37, 29, 82);
+ }
+.navbar-text{
+    font-size: medium;
+}
