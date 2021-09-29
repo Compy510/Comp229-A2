@@ -69,3 +69,29 @@ html{
 footer{
     overflow:hidden!important;
 }
+#servicelist{
+    list-style-type: none;
+}
+#icon_serv1{
+    color: blue;
+    float:left;
+    padding-right: 15px;
+}
+#icon_serv2{
+    color: blue;
+    float:left;
+    padding-right: 15px;
+    margin-left: -12px;
+}
+#icon_serv3{
+    color: blue;
+    float:left;
+    padding-right: 10px;
+    margin-left: -14px;
+}
+#serv_image{
+    float: right;
+    width: 500px;
+    height: 400px;
+    margin-right: -25px;
+}
