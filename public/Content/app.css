@@ -33,7 +33,6 @@
     background-image:url(/Assets/images/fullnight2.jpg);
     max-height: 100%;
     background-repeat: no-repeat;
-    overflow:hidden!important;
 }
 #welcome2{
     color: white;
@@ -62,8 +61,11 @@
 html{
     margin-bottom: 65px;
 }
-#linux, li{
+#linux{
     list-style-type: none;
     display: inline;
     margin-right: 40px;
+}
+footer{
+    overflow:hidden!important;
 }
