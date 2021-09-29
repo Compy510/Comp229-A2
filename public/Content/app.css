@@ -95,3 +95,43 @@ footer{
     height: 400px;
     margin-right: -25px;
 }
+
+input:invalid{
+        background-color: rgb(255,233,233);
+}
+label {
+    display: inline-block;
+     margin-right:5px;
+}
+#submit{
+   background-color: rgb(211, 209, 209);
+   border-radius: 3px;
+    border-color: rgb(126, 126, 126);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#reset{
+   background-color: rgb(211, 209, 209);
+   border-radius: 3px;
+    border-color: rgb(126, 126, 126);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#Fname, #Lname{
+    width:222px;
+}
+#Email1{
+    width:258px;
+}
+#commtag{
+display: block;
+}
+.panel-default{
+    float:right;
+    border-color: black;
+    border-style: solid;
+}
+#drake{
+    float:right;
+    width:450px;
+    height: 300px;
+    margin-top: -80px;
+}

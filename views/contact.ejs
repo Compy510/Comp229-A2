@@ -1,0 +1,97 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+<!--Main Content-->
+    <main class="container">
+      <div class="jumbotron">
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><h2>Contact Information</h2></div>
+            <div class="panel-body"><strong>Email: </strong><a href="mailto:akhan545@my.centennialcollege.ca">akhan545@my.centennialcollege.ca</a></div>
+            <div class="panel-body"><strong>Linkedin: </strong><a href="https://www.linkedin.com/in/arshadkhan545/">Akhan</a></div>
+            <div class="panel-body"><strong>Phone number:</strong> 416-625-6171</div>
+        </div>
+
+        <form action="/home"
+        onsubmit="alert('Thank you for contacting me, I will get back to you as soon as possible.')">
+            <p>
+                <h2>Enter your contact information below:</h2>
+            </p>
+            <p>
+           <label for="Fname">First Name:</label>
+            <input id="Fname" placeholder="Firstname" oninvalid="Bubble(this);" 
+             name="Firstname" class="fname" type="text" required="required">
+            </p>
+            <p> 
+                <label for="Lname">Last Name:</label>
+                <input id="Lname" placeholder="Lastname" oninvalid="Bubble(this); " 
+                 name="LastName" type="text" required="required">
+            </p>
+            <p> 
+                <label for="Phonenum">Phone Number:</label>
+                <input id="Phone1" placeholder="(xxx)-xxx-xxxx" oninvalid="Bubble(this);" 
+                 name="PhoneNumber" type="tel" required="required">
+            </p>
+            <p> 
+                <label for="Email">Email:</label>
+                <input id="Email1" placeholder="email@address.com" oninvalid="Bubble(this);" 
+                 name="Email" type="text" required="required">
+            </p>
+            <img id="drake" src="/Assets/images/drake.gif"></img>
+            <p> 
+                <label for="Comments" id="commtag">Comments:</label>
+
+                <textarea id="Comments" name="Comments" rows="4" cols="50"></textarea> 
+            </p>
+           <p>
+        <input type="submit" id="submit" value="Complete Registration">
+         <input type="reset" id="reset" value="Clear Form">
+        </p> 
+      </form>
+   
+    </main>
+    
+    <script>
+    var EmailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.]+\.[a-zA-Z]/;
+    var PhoneRegEx = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+
+    function ValidPhone(Evt) { 
+    var PhoneTest = document.getElementById("Phone1").value;
+    if(PhoneRegEx.test(PhoneTest)) {
+
+    } 
+    else 
+    {
+    alert("Incorrect Phone Number Format, must be (xxx)-xxx-xxxx");
+    Evt.preventDefault();
+    }   
+}
+
+    function ValidEmail(Evt) { 
+    var EmailTest = document.getElementById("Email1").value;
+    if(EmailRegEx.test(EmailTest)) {
+
+    } 
+    else 
+    {
+    alert("Incorrect Email Format, must be email@address.com");
+    Evt.preventDefault();
+    }   
+}
+function createEventListeners() {
+    var Listen1 = document.getElementById("submit");
+    Listen1.addEventListener("click", ValidEmail, false);
+    var Listen2 = document.getElementById("submit");
+    Listen2.addEventListener("click", ValidPhone, false);
+}
+
+function setup(){
+    createEventListeners();
+}
+
+window.addEventListener("load", setup, false);
+
+    </script>
+    <%- include partials/bottom_nav.ejs %>
+    
+    <%- include partials/footer.ejs %>
