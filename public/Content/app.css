@@ -33,9 +33,37 @@
     background-image:url(/Assets/images/fullnight2.jpg);
     max-height: 100%;
     background-repeat: no-repeat;
+    overflow:hidden!important;
 }
 #welcome2{
     color: white;
     font-size: larger;
     margin-right: 140px;
+}
+#project1{
+    width: 400px;
+    float:left;
+    height: 200px;
+    margin-right: 25px;
+}
+#project2{
+    width: 400px;
+    height: 200px;
+    float:right ;
+    margin-top: -30px;
+}
+#project3{
+    width: 400px;
+    float:left;
+    height: 200px;
+    margin-right: 25px;
+    margin-top: -50px;
+}
+html{
+    margin-bottom: 65px;
+}
+#linux, li{
+    list-style-type: none;
+    display: inline;
+    margin-right: 40px;
 }
