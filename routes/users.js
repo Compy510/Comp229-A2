@@ -1,3 +1,7 @@
+/*FileName: users.js
+Author: Arshad Khan
+Student#: 301180776
+Date: September 27*/
 var express = require('express');
 var router = express.Router();
 

@@ -11,7 +11,7 @@
             <div class="panel-body"><strong>Linkedin: </strong><a href="https://www.linkedin.com/in/arshadkhan545/">Akhan</a></div>
             <div class="panel-body"><strong>Phone number:</strong> 416-625-6171</div>
         </div>
-
+<!--form content-->
         <form action="/home"
         onsubmit="alert('Thank you for contacting me, I will get back to you as soon as possible.')">
             <p>
@@ -50,7 +50,8 @@
       </form>
    
     </main>
-    
+
+    <!--Javascript for form validation-->
     <script>
     var EmailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.]+\.[a-zA-Z]/;
     var PhoneRegEx = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
@@ -92,6 +93,7 @@ function setup(){
 window.addEventListener("load", setup, false);
 
     </script>
+
     <%- include partials/bottom_nav.ejs %>
     
     <%- include partials/footer.ejs %>
