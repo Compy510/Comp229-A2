@@ -125,7 +125,7 @@ label {
     border-color: rgb(126, 126, 126);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-#Fname, #Lname{
+#Firstname, #Lastname{
     width:222px;
 }
 #Email1{
