@@ -2,12 +2,12 @@
 /*FileName: server.js
 Author: Arshad Khan
 Student#: 301180776
-Date: September 27  */
+Date: September 27 */
 /**
  * Module dependencies.
  */
 
-var app = require('./app');
+var app = require('./config/app');
 var debug = require('debug')('week3:server');
 var http = require('http');
 

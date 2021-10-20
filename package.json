@@ -18,12 +18,13 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jquery": "^3.6.0",
+    "mongoose": "^6.0.11",
     "morgan": "~1.9.1",
+    "nodemon": "^2.0.14",
     "popper.js": "^1.16.1"
   },
   "description": "portfolio a1 for comp229",
   "main": "index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Compy510/Comp229-A1.git"
