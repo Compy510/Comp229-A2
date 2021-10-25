@@ -4,7 +4,7 @@ let mongoose = require('mongoose');
 
 //create a reference to the model
 
-let Book = require('../models/book');
+let Book = require('../models/contacts');
 
 module.exports.displayBookList = (req, res, next) => {
     Book.find((err, bookList) => {
@@ -16,24 +16,22 @@ module.exports.displayBookList = (req, res, next) => {
         {
             //console.log(bookList);
 
-            res.render('book/list', {title: 'Books', 
+            res.render('contacts/list', {title: 'Business Contacts', 
             BookList: bookList, displayName: req.user ? req.user.displayName : ''});
         }
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('book/add', {title: 'Add Book',
+    res.render('contacts/add', {title: 'Add Contact',
     displayName: req.user ? req.user.displayName : ''})
 }
 
 module.exports.processAddPage =  (req, res, next) => {
     let newBook = Book({
-        "name": req.body.name,
-        "author": req.body.author,
-        "published": req.body.published,
-        "description": req.body.description,
-        "price": req.body.price
+        "contactName": req.body.contactName,
+        "contactNumber": req.body.contactNumber,
+        "email": req.body.email
     });
 
     Book.create(newBook, (err, Book) => {
@@ -45,7 +43,7 @@ module.exports.processAddPage =  (req, res, next) => {
         else
         {
             //refresh the book list
-            res.redirect('/book-list');
+            res.redirect('/contacts-list');
         }
     });
 }
@@ -62,7 +60,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('book/edit', {title: 'Edit Book', book: bookToEdit,
+            res.render('contacts/update', {title: 'Edit Contact', book: bookToEdit,
             displayName: req.user ? req.user.displayName : ''})
         }
     });
@@ -73,11 +71,9 @@ module.exports.processEditPage = (req, res, next) => {
 
     let updatedBook = Book({
         "_id": id, 
-        "name": req.body.name,
-        "author": req.body.author,
-        "published": req.body.published,
-        "description": req.body.description,
-        "price": req.body.price
+        "contactName": req.body.contactName,
+        "contactNumber": req.body.contactNumber,
+        "email": req.body.email
     });
 
     Book.updateOne({_id: id}, updatedBook, (err) => {
@@ -89,7 +85,7 @@ module.exports.processEditPage = (req, res, next) => {
         else
         {
             //refresh the book list
-            res.redirect('/book-list');
+            res.redirect('/contacts-list');
         }
     });
 }
@@ -106,7 +102,7 @@ module.exports.performDelete = (req, res, next) => {
         else
         {
             //refresh the book list
-            res.redirect('/book-list');
+            res.redirect('/contacts-list');
         }
     })
 }

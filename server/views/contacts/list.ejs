@@ -8,18 +8,16 @@
      <h1><%= title %> </h1>
 
      <% if(typeof displayName == 'string' && displayName) { %>
-     <a href="/book-list/add" class="btn btn-primary" role="button">
-    <i class="fas fa-plus-circle"></i> Add a Book</a>
+     <a href="/contacts-list/add" class="btn btn-primary" role="button">
+    <i class="fas fa-plus-circle"></i> Add a Contact</a>
     <% } %>
      <br>
      <table class="table table-bordered table-striped table-hover">
          <!--Header Row-->
          <tr>
-             <th class="text-center">Name</th>
-             <th class="text-center">Author</th>
-             <th class="text-center">Published</th>
-             <th class="text-center">Description</th>
-             <th class="text-center">Price</th>
+             <th class="text-center">Contact Name</th>
+             <th class="text-center">Contact Number</th>
+             <th class="text-center">Email</th>
              <% if(typeof displayName == 'string' && displayName) { %>
              <th class="text-center"></th>
              <th class="text-center"></th>
@@ -29,19 +27,17 @@
          <!--Repeatable Template Row-->
          <% for(let count = 0; count < BookList.length; count++) { %> 
             <tr>
-                <td class="text-center"><%= BookList[count].name %></td>
-                <td class="text-center"><%= BookList[count].author %></td>
-                <td class="text-center"><%= BookList[count].published %></td>
-                <td class="text-center"><%= BookList[count].description %></td>
-                <td class="text-center"><%= BookList[count].price %></td>
+                <td class="text-center"><%= BookList[count].contactName %></td>
+                <td class="text-center"><%= BookList[count].contactNumber %></td>
+                <td class="text-center"><%= BookList[count].email %></td>
 
                 <% if(typeof displayName == 'string' && displayName) { %>
                 <td class="text-center">
-                    <a href="/book-list/edit/<%= BookList[count]._id %>" class="btn btn-primary btn-sm">
-                    <i class="fas fa-pencil-alt"></i> Edit</a>
+                    <a href="/contacts-list/update/<%= BookList[count]._id %>" class="btn btn-primary btn-sm">
+                    <i class="fas fa-pencil-alt"></i> Update</a>
                 </td>
                 <td class="text-center">
-                    <a href="/book-list/delete/<%= BookList[count]._id %>" class="btn btn-danger btn-sm">
+                    <a href="/contacts-list/delete/<%= BookList[count]._id %>" class="btn btn-danger btn-sm">
                     <i class="fas fa-trash-alt"></i> Delete</a>
                 </td>
                 <% } %>

@@ -4,7 +4,7 @@ let mongoose = require('mongoose');
 
 let passport = require('passport');
 
-let bookController = require('../controllers/book');
+let bookController = require('../controllers/contacts');
 
 //helper function for guard purposes
 function requireAuth(req, res, next)
@@ -27,10 +27,10 @@ router.get('/add', requireAuth, bookController.displayAddPage);
 router.post('/add', requireAuth, bookController.processAddPage);
 
 /* GET Route for displaying the Edit page - Update operation*/
-router.get('/edit/:id', requireAuth, bookController.displayEditPage);
+router.get('/update/:id', requireAuth, bookController.displayEditPage);
 
 /* POST Route for processing the Edit page - Update operation*/
-router.post('/edit/:id', requireAuth, bookController.processEditPage);
+router.post('/update/:id', requireAuth, bookController.processEditPage);
 
 /* GET to perform deletion - Delete operation*/
 router.get('/delete/:id', requireAuth, bookController.performDelete);

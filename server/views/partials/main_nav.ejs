@@ -41,16 +41,16 @@
         <a class="nav-link" href="/services"><i class="fas fa-file-signature"></i> Services </a>
       </li>
 
-      <% if (title == "Books") { %>
+      <% if (title == "Business Contacts") { %>
         <li class="nav-item active">
         <% } else  { %>
         <li class="nav-item">
         <% } %>
 
         <% if(typeof displayName == 'string' && displayName) { %>
-          <a class="nav-link" href="/book-list"><i class="fas fa-address-book"></i> Books </a>
+          <a class="nav-link" href="/contacts-list"><i class="fas fa-address-book"></i> Rolodex </a>
         <%} else { %>
-          <a class="nav-link" href="/login"><i class="fas fa-address-book"></i> Books </a>
+          <a class="nav-link" href="/login"><i class="fas fa-address-book"></i> Rolodex </a>
         <% } %>
         </li>
 
