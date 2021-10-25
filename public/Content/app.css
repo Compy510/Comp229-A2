@@ -19,7 +19,9 @@ Date: September 27*/
 .navbar-text{
     font-size: medium;
 }
-
+#nav-line{
+    color: white;
+}
 /* About page content*/
 #me{
     float: right;
