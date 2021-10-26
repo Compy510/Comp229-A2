@@ -1,6 +1,9 @@
 <%- include ../partials/header.ejs %>
 
 <%- include ../partials/main_nav.ejs %>
+
+<!--Main Content-->
+
 <body id="loginPage" >
 <main class="container">
     <!--Message Area-->
@@ -10,11 +13,12 @@
         </div>
     <% } %>
 
+<!--Login Form Content-->
     <div class="row">
         <div class="offset-md-4 col-md-4">
             <h1>Please Login</h1>
             <br>
-            <p id="separater"></p>
+            <p id="separater"></p> <!--Used to separate the title from the form-->
             <form method="POST" autocomplete="off">
                 <fieldset class="form-group">
                     <label for="username"><strong>Username: </strong></label>
@@ -28,19 +32,17 @@
                     placeholder="Enter password" id="password" required>
                 </fieldset>
                 <br>
+
+            <!--button content-->
                 <fieldset class="form-group text-right">
                     <input type="submit" class="btn btn-success" value="Login" id="login">
                     <a href="/">
                     <input type="button" class="btn btn-warning" value="Cancel">
                     </a>
                 </fieldset>
-
             </form>
-
         </div>
-
     </div>
-
 </main>
 </body>
 

@@ -22,6 +22,10 @@ Date: September 27*/
 #nav-line{
     color: white;
 }
+#usernameDisplay{
+    color:rgb(113, 255, 177);
+    padding-right: 7px;
+}
 /* About page content*/
 #me{
     float: right;
@@ -168,4 +172,9 @@ display: block;
 }
 #loginPage{
     background-color:darkseagreen;
+}
+
+/*update view content */
+#deleteButton{
+    float:right;
 }

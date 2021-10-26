@@ -1,7 +1,7 @@
 /*FileName: app.js
 Author: Arshad Khan
 Student#: 301180776
-Date: September 27*/
+Date: October 22*/
 // IIFE -- Immediately Invoked Function Expression
 (function(){
     function start()
@@ -16,7 +16,7 @@ Date: September 27*/
                 if(!confirm("Are you sure?")) 
                 {
                     Event.preventDefault();
-                    window.location.assign('/book-list');
+                    window.location.assign('/contacts-list');
                 }
             });
         }

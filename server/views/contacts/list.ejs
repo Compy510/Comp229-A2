@@ -14,7 +14,7 @@
      <br>
      <br>
      <br>
-     <p id="separater"></p>
+     <p id="separater"></p> <!--separates the title from the table-->
      <table class="table table-bordered table-striped table-hover">
          <!--Header Row-->
          <tr>
@@ -34,6 +34,7 @@
                 <td class="text-center"><%= ContactsList[count].contactNumber %></td>
                 <td class="text-center"><%= ContactsList[count].email %></td>
 
+        <!--Repeatable button content-->
                 <% if(typeof displayName == 'string' && displayName) { %>
                 <td class="text-center">
                     <a href="/contacts-list/update/<%= ContactsList[count]._id %>" 

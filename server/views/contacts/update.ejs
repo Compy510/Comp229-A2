@@ -2,13 +2,14 @@
 
 <%- include ../partials/main_nav.ejs %>
 
-<!--Content for Add Page-->
+<!--Main Content-->
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6"></div>
         <h1 id="contactsTitle"><%= title %></h1>
 
-        <p id="separater"></p>
+<!--Form Content-->
+        <p id="separater"></p> <!--separates the title from the form-->
         <form class="form" method="POST">
             <div class="form-group">
                 <label for="nameTextField"><strong>Contact Name</strong></label>
@@ -40,6 +41,7 @@
                 required>
             </div>
 
+        <!--Button content-->
             <br>
             <button class="btn btn-primary" type="submit">
                 <i class="fas fa-edit"></i>Submit</button>
@@ -47,8 +49,10 @@
                 <a href="/contacts-list" class="btn btn-warning">
                     <i class="fas fa-undo"></i>Cancel</a>
 
+                <a href="/contacts-list/delete/<%= contacts._id %>" 
+                    class="btn btn-danger btn-sm" id="deleteButton">
+                    <i class="fas fa-trash-alt" ></i> Delete</a>
         </form>
-
     </div>
 </div>
 

@@ -61,9 +61,6 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-//passport user configuration
-
-
 //create a User Model instance
 let userModel = require('../models/user');
 let User = userModel.User;
@@ -75,8 +72,7 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
-
+//routing
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contacts-list', booksRouter);

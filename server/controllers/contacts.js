@@ -1,11 +1,16 @@
+/*FileName: app.js
+Author: Arshad Khan
+Student#: 301180776
+Date: October 22*/
+
 let express = require('express');
 let router  = express.Router();
 let mongoose = require('mongoose');
 
 //create a reference to the model
-
 let Contacts = require('../models/contacts');
 
+//displays contacts list page
 module.exports.displayContactsList = (req, res, next) => {
     Contacts.find((err, contactsList) => {
         if (err)
@@ -20,11 +25,13 @@ module.exports.displayContactsList = (req, res, next) => {
     });
 }
 
+//displays add contact page
 module.exports.displayAddPage = (req, res, next) => {
     res.render('contacts/add', {title: 'Add Contact',
     displayName: req.user ? req.user.displayName : ''})
 }
 
+//processes add contact page after new entry/submit
 module.exports.processAddPage =  (req, res, next) => {
     let newContacts = Contacts({
         "contactName": req.body.contactName,
@@ -46,6 +53,7 @@ module.exports.processAddPage =  (req, res, next) => {
     });
 }
 
+//displays update page 
 module.exports.displayUpdatePage = (req, res, next) => {
     let id = req.params.id;
 
@@ -64,6 +72,7 @@ module.exports.displayUpdatePage = (req, res, next) => {
     });
 }
 
+//processes update page after data is edited/submitted
 module.exports.processUpdatePage = (req, res, next) => {
     let id = req.params.id;
 
@@ -88,6 +97,7 @@ module.exports.processUpdatePage = (req, res, next) => {
     });
 }
 
+//deletes data from database
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
 
