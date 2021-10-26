@@ -5,13 +5,16 @@
 <!--Main Content-->
 <main class="container">
  <div class="col-md-offset-3 col-md-8">
-     <h1><%= title %> </h1>
+     <h1 id="contactsTitle"><%= title %> </h1>
 
      <% if(typeof displayName == 'string' && displayName) { %>
-     <a href="/contacts-list/add" class="btn btn-primary" role="button">
+     <a href="/contacts-list/add" class="btn btn-primary" id="addContactButton" role="button">
     <i class="fas fa-plus-circle"></i> Add a Contact</a>
     <% } %>
      <br>
+     <br>
+     <br>
+     <p id="separater"></p>
      <table class="table table-bordered table-striped table-hover">
          <!--Header Row-->
          <tr>
@@ -25,19 +28,20 @@
          </tr>
 
          <!--Repeatable Template Row-->
-         <% for(let count = 0; count < BookList.length; count++) { %> 
+         <% for(let count = 0; count < ContactsList.length; count++) { %> 
             <tr>
-                <td class="text-center"><%= BookList[count].contactName %></td>
-                <td class="text-center"><%= BookList[count].contactNumber %></td>
-                <td class="text-center"><%= BookList[count].email %></td>
+                <td class="text-center"><%= ContactsList[count].contactName %></td>
+                <td class="text-center"><%= ContactsList[count].contactNumber %></td>
+                <td class="text-center"><%= ContactsList[count].email %></td>
 
                 <% if(typeof displayName == 'string' && displayName) { %>
                 <td class="text-center">
-                    <a href="/contacts-list/update/<%= BookList[count]._id %>" class="btn btn-primary btn-sm">
+                    <a href="/contacts-list/update/<%= ContactsList[count]._id %>" 
+                        class="btn btn-primary btn-sm" id="updateButton">
                     <i class="fas fa-pencil-alt"></i> Update</a>
                 </td>
                 <td class="text-center">
-                    <a href="/contacts-list/delete/<%= BookList[count]._id %>" class="btn btn-danger btn-sm">
+                    <a href="/contacts-list/delete/<%= ContactsList[count]._id %>" class="btn btn-danger btn-sm">
                     <i class="fas fa-trash-alt"></i> Delete</a>
                 </td>
                 <% } %>

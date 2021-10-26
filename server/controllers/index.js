@@ -69,7 +69,6 @@ module.exports.processLoginPage = (req, res, next) => {
     })(req, res, next);
 }
 
-
 module.exports.performLogout = (req, res, next) => {
     req.logout();
     res.redirect('/');

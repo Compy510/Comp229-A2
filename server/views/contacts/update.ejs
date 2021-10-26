@@ -6,36 +6,37 @@
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6"></div>
-        <h1><%= title %></h1>
+        <h1 id="contactsTitle"><%= title %></h1>
 
+        <p id="separater"></p>
         <form class="form" method="POST">
             <div class="form-group">
-                <label for="nameTextField">Contact Name</label>
+                <label for="nameTextField"><strong>Contact Name</strong></label>
                 <input type="text" class="form-control"
                 id="contactNameTextField"
                 placeholder="Enter the Name of the Contact"
                 name="contactName" 
-                value="<%= book.contactName %>"
+                value="<%= contacts.contactName %>"
                 required>
             </div>
 
             <div class="form-group">
-                <label for="authorTextField">Contact Number</label>
+                <label for="authorTextField"><strong>Contact Number</strong></label>
                 <input type="text" class="form-control"
                 id="contactNumberTextField"
                 placeholder="Enter the Phone Number"
                 name="author" 
-                value="<%= book.contactNumber %>"
+                value="<%= contacts.contactNumber %>"
                 required>
             </div>
 
             <div class="form-group">
-                <label for="publishedTextField">Email</label>
+                <label for="publishedTextField"><strong>Email Address</strong></label>
                 <input type="text" class="form-control"
                 id="emailTextField"
                 placeholder="Enter the Email Address"
                 name="email" 
-                value="<%= book.email %>"
+                value="<%= contacts.email %>"
                 required>
             </div>
 

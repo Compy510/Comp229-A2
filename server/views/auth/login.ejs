@@ -1,7 +1,7 @@
 <%- include ../partials/header.ejs %>
 
 <%- include ../partials/main_nav.ejs %>
-
+<body id="loginPage" >
 <main class="container">
     <!--Message Area-->
     <%if(messages.length > 0) {%>
@@ -13,21 +13,23 @@
     <div class="row">
         <div class="offset-md-4 col-md-4">
             <h1>Please Login</h1>
+            <br>
+            <p id="separater"></p>
             <form method="POST" autocomplete="off">
                 <fieldset class="form-group">
-                    <label for="username">Username: </label>
+                    <label for="username"><strong>Username: </strong></label>
                     <input type="text" class="form-control" name="username" 
                     placeholder="Enter username" id="username" required autofocus>
                 </fieldset>
 
                 <fieldset class="form-group">
-                    <label for="password">Password: </label>
+                    <label for="password"><strong>Password: </strong></label>
                     <input type="password" class="form-control" name="password" 
                     placeholder="Enter password" id="password" required>
                 </fieldset>
                 <br>
                 <fieldset class="form-group text-right">
-                    <input type="submit" class="btn btn-success" value="Login">
+                    <input type="submit" class="btn btn-success" value="Login" id="login">
                     <a href="/">
                     <input type="button" class="btn btn-warning" value="Cancel">
                     </a>
@@ -39,8 +41,8 @@
 
     </div>
 
-
 </main>
+</body>
 
 
 

@@ -147,3 +147,25 @@ display: block;
     height: 300px;
     margin-top: -80px;
 }
+
+/* Business Contacts Page content */
+#separater{
+    border-top: black;
+    border-style: solid;
+}
+#addContactButton{
+    background-color:rgb(97, 25, 155);
+}
+#updateButton{
+    background-color: rgb(29, 82, 45);
+}
+#contactsTitle{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* login page content */
+#login{
+    background-color:blue;
+}
+#loginPage{
+    background-color:darkseagreen;
+}
