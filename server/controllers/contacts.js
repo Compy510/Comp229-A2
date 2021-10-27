@@ -11,7 +11,7 @@ let mongoose = require('mongoose');
 let Contacts = require('../models/contacts');
 
 //displays contacts list page
-module.exports.displayContactsList = (req, res, next) => {
+module.exports.displayContactsListView = (req, res, next) => {
     Contacts.find((err, contactsList) => {
         if (err)
         {
@@ -26,13 +26,13 @@ module.exports.displayContactsList = (req, res, next) => {
 }
 
 //displays add contact page
-module.exports.displayAddPage = (req, res, next) => {
+module.exports.displayAddView = (req, res, next) => {
     res.render('contacts/add', {title: 'Add Contact',
     displayName: req.user ? req.user.displayName : ''})
 }
 
 //processes add contact page after new entry/submit
-module.exports.processAddPage =  (req, res, next) => {
+module.exports.processAddView =  (req, res, next) => {
     let newContacts = Contacts({
         "contactName": req.body.contactName,
         "contactNumber": req.body.contactNumber,
@@ -47,14 +47,13 @@ module.exports.processAddPage =  (req, res, next) => {
         }
         else
         {
-            //refresh the Contacts list
             res.redirect('/contacts-list');
         }
     });
 }
 
 //displays update page 
-module.exports.displayUpdatePage = (req, res, next) => {
+module.exports.displayUpdateView = (req, res, next) => {
     let id = req.params.id;
 
     Contacts.findById(id, (err, contactToEdit) => {
@@ -65,7 +64,6 @@ module.exports.displayUpdatePage = (req, res, next) => {
         }
         else
         {
-            //show the edit view
             res.render('contacts/update', {title: 'Edit Contact', contacts: contactToEdit,
             displayName: req.user ? req.user.displayName : ''})
         }
@@ -73,7 +71,7 @@ module.exports.displayUpdatePage = (req, res, next) => {
 }
 
 //processes update page after data is edited/submitted
-module.exports.processUpdatePage = (req, res, next) => {
+module.exports.processUpdateView = (req, res, next) => {
     let id = req.params.id;
 
     let updatedContacts = Contacts({
@@ -91,14 +89,13 @@ module.exports.processUpdatePage = (req, res, next) => {
         }
         else
         {
-            //refresh the book list
             res.redirect('/contacts-list');
         }
     });
 }
 
 //deletes data from database
-module.exports.performDelete = (req, res, next) => {
+module.exports.DeleteData = (req, res, next) => {
     let id = req.params.id;
 
     Contacts.remove({_id: id}, (err) => {
@@ -109,7 +106,6 @@ module.exports.performDelete = (req, res, next) => {
         }
         else
         {
-            //refresh the book list
             res.redirect('/contacts-list');
         }
     })

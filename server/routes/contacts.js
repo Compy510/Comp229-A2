@@ -14,7 +14,6 @@ let contactsController = require('../controllers/contacts');
 //helper function for guard purposes
 function requireAuth(req, res, next)
 {
-    //check if the user is logged in
     if(!req.isAuthenticated())
     {
         return res.redirect('/login');
@@ -23,22 +22,22 @@ function requireAuth(req, res, next)
 }
 
 /* GET Route for Contacts list page - Read operation*/
-router.get('/', contactsController.displayContactsList);
+router.get('/', contactsController.displayContactsListView);
 
 /* GET Route for displaying the Add page - Create operation*/
-router.get('/add', requireAuth, contactsController.displayAddPage);
+router.get('/add', requireAuth, contactsController.displayAddView);
 
 /* POST Route for processing the Add page - Read operation*/
-router.post('/add', requireAuth, contactsController.processAddPage);
+router.post('/add', requireAuth, contactsController.processAddView);
 
 /* GET Route for displaying the Update page - Update operation*/
-router.get('/update/:id', requireAuth, contactsController.displayUpdatePage);
+router.get('/update/:id', requireAuth, contactsController.displayUpdateView);
 
 /* POST Route for processing the Update page - Update operation*/
-router.post('/update/:id', requireAuth, contactsController.processUpdatePage);
+router.post('/update/:id', requireAuth, contactsController.processUpdateView);
 
 /* GET to perform deletion - Delete operation*/
-router.get('/delete/:id', requireAuth, contactsController.performDelete);
+router.get('/delete/:id', requireAuth, contactsController.DeleteData);
 
 
 module.exports = router;

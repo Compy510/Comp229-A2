@@ -8,30 +8,30 @@ let router = express.Router();
 let indexController = require('../controllers/index');
 
 /* GET home page. */
-router.get('/', indexController.displayHomePage);
+router.get('/', indexController.displayHomeView);
 
 /* GET home page. */
-router.get('/home', indexController.displayHomePage);
+router.get('/home', indexController.displayHomeView);
 
 /* GET About Us page. */
-router.get('/about', indexController.displayAboutPage);
+router.get('/about', indexController.displayAboutView);
 
 /* GET Projects page. */
-router.get('/projects', indexController.displayProjectsPage);
+router.get('/projects', indexController.displayProjectsView);
 
 /* GET Services page. */
-router.get('/services', indexController.displayServicesPage);
+router.get('/services', indexController.displayServicesView);
 
 /* GET Contact Us page. */
-router.get('/contact', indexController.displayContactPage);
+router.get('/contact', indexController.displayContactView);
 
 /* GET Route for displaying the login page */
-router.get('/login', indexController.displayLoginPage);
+router.get('/login', indexController.displayLoginView);
 
 /* POST Route for processing the login page */
-router.post('/login', indexController.processLoginPage);
+router.post('/login', indexController.processLoginView);
 
 /* GET to perform user logout */
-router.get('/logout', indexController.performLogout);
+router.get('/logout', indexController.LogoutUser);
 
 module.exports = router;

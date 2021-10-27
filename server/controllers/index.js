@@ -10,36 +10,35 @@ let passport = require('passport');
 
 //define the user model instance
 let userModel = require('../models/user');
-let User = userModel.User; //alias
+let User = userModel.User; 
 
 //displays home page
-module.exports.displayHomePage = (req, res, next) => {
+module.exports.displayHomeView = (req, res, next) => {
     res.render('index', {title: 'Home', displayName: req.user ? req.user.displayName : ''});
 }
 
 //displays about page
-module.exports.displayAboutPage = (req, res, next) => {
+module.exports.displayAboutView = (req, res, next) => {
     res.render('about', { title: 'About', displayName: req.user ? req.user.displayName : ''});
 }
 
 //displays projects page
-module.exports.displayProjectsPage = (req, res, next) => {
+module.exports.displayProjectsView = (req, res, next) => {
     res.render('projects', { title: 'Projects', displayName: req.user ? req.user.displayName : ''});
 }
 
 //displays services page
-module.exports.displayServicesPage = (req, res, next) => {
+module.exports.displayServicesView = (req, res, next) => {
     res.render('services', { title: 'Services', displayName: req.user ? req.user.displayName : ''});
 }
 
 //displays contact page
-module.exports.displayContactPage = (req, res, next) => {
+module.exports.displayContactView = (req, res, next) => {
     res.render('contact', { title: 'Contact', displayName: req.user ? req.user.displayName : ''});
 }
 
 //displays login page
-module.exports.displayLoginPage = (req, res, next) => {
-    //check if user is already logged in
+module.exports.displayLoginView = (req, res, next) => {
     if(!req.user)
     {
         res.render('auth/login', 
@@ -56,22 +55,19 @@ module.exports.displayLoginPage = (req, res, next) => {
 }
 
 //processes login 
-module.exports.processLoginPage = (req, res, next) => {
+module.exports.processLoginView = (req, res, next) => {
     passport.authenticate('local',
     (err, user, info) => {
-        //server error
         if(err)
         {
             return next(err);
         }
-        //is there a user login error?
         if(!user)
         {
             req.flash('loginMessage', 'Authentication Error');
             return res.redirect('/login');
         }
         req.login(user, (err) => {
-            //server error
             if(err)
             {
                 return next(err);
@@ -82,7 +78,7 @@ module.exports.processLoginPage = (req, res, next) => {
 }
 
 //logs out the user
-module.exports.performLogout = (req, res, next) => {
+module.exports.LogoutUser = (req, res, next) => {
     req.logout();
     res.redirect('/');
 }
